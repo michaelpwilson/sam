@@ -55,7 +55,42 @@ module.exports = {
 };
 ```
 
-We then use angular-sails on the front end for use of web sockets.
+Next is to create your model, this will be where your business logic resides:
+
+```javascript
+/**
+* Posts.js
+*
+* @description :: TODO: You might write a short summary of how this model works and what it represents here.
+* @docs        :: http://sailsjs.org/#!documentation/models
+*/
+
+module.exports = {
+
+  attributes: {
+
+    r: {
+     type: "integer",
+     required: true
+    },
+    c: {
+     type: "integer",
+     required: true
+    },
+    color: {
+     type: "string",
+     required: true
+    },
+    name: {
+      type: "string",
+      unique: true
+    }
+  }
+
+};
+```
+
+We then use [angular-sails](https://github.com/janpantel/angular-sails) on the front end for use of web sockets.
 
 1. ```$sails.get("/posts")``` for the first time and attach it to the ```$scope```.
 2. On every new action which happens to the "posts", do that action

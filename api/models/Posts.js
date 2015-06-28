@@ -24,8 +24,7 @@ module.exports = {
     name: {
       type: "string",
       unique: true
-    }
-
+    },
   }
 };
 
