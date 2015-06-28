@@ -4,7 +4,7 @@
 
 a [Sails](http://sailsjs.org) application (v0.11.0) using the latest version of Angular Material (v0.10.0)
 
-##View the demo
+## View the demo
 
 The demo is included in this repository showing off the [Grid List](https://material.angularjs.org/latest/#/demo/material.components.gridList) component.
 
