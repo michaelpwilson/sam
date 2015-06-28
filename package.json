@@ -1,9 +1,8 @@
 {
   "name": "sails-angular-material",
-  "private": true,
-  "version": "0.0.0",
-  "description": "a Sails application",
-  "keywords": [],
+  "version": "0.1.4",
+  "description": "a Sails application using Angular Material",
+  "keywords": ["mvc", "mvvm", "realtime", "sails", "angular", "material"],
   "dependencies": {
     "ejs": "~0.8.4",
     "grunt": "0.4.2",
@@ -30,8 +29,8 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/root/sails-angular-material.git"
+    "url": "git://github.com/mwils-bp/sails-angular-material.git"
   },
-  "author": "root",
+  "author": "unsplit",
   "license": ""
 }
