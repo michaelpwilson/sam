@@ -1,0 +1,37 @@
+<div ng-controller="AppCtrl as appCtrl">
+  <md-button class="md-primary md-raised" ng-click="showAdvanced($event)" flex flex-md="100">
+     Create a post
+  </md-button>
+     <md-progress-circular ng-hide="determinateValue === 100" md-mode="determinate" value="{{determinateValue}}" style="margin: 0 auto;"></md-progress-circular>
+  <md-grid-list ng-show="determinateValue === 100"
+        md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
+        md-row-height-gt-md="1:1" md-row-height="2:2"
+        md-gutter="12px" md-gutter-gt-sm="8px" >
+    <md-grid-tile ng-init="isOpen = false" ng-repeat="post in posts" class="{{post.color}}" md-rowspan="{{post.r}}" md-colspan="{{post.c}}" md-colspan-sm="1">
+      <div>
+   <md-fab-speed-dial md-open="isOpen" md-direction="{{demo.selectedDirection}}"
+                         ng-class="demo.selectedMode">
+        <md-fab-trigger>
+          <md-button aria-label="menu" class="md-fab md-primary">
+            <md-icon md-svg-src="/images/menu.svg"></md-icon>
+          </md-button>
+        </md-fab-trigger>
+        <md-fab-actions>
+          <md-button aria-label="twitter" class="md-fab md-primary md-hue-1 md-mini">
+            <md-icon md-svg-src="/images/edit.svg"></md-icon>
+          </md-button>
+          <md-button aria-label="facebook" class="md-fab md-primary md-hue-1 md-mini">
+            <md-icon md-svg-src="/images/settings.svg"></md-icon>
+          </md-button>
+        </md-fab-actions>
+      </md-fab-speed-dial>
+          <md-button ng-click="deletePost(post.id)" aria-label="delete" class="md-mini deletePost">
+            <md-icon md-svg-src="/images/delete.svg"></md-icon>
+          </md-button>
+      </div>
+      <md-grid-tile-footer>
+        <h3>#{{$index}} {{post.name}}: ({{post.r}}r x {{post.c}}c)</h3>
+      </md-grid-tile-footer>
+    </md-grid-tile>
+  </md-grid-list>
+</div>

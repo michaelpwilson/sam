@@ -1,0 +1,42 @@
+<md-dialog aria-label="Create a post">
+  <form>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Create a post</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="answer('not applicable')">
+        <md-icon md-svg-src="/images/delete.svg" aria-label="Close dialog"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <div>
+      <md-input-container>
+        <label>Name</label>
+        <input ng-model="newPost.name">
+      </md-input-container>
+      <md-input-container>
+        <label>Rowspan</label>
+        <input ng-model="newPost.r" type="number" min="1" max="3">
+      </md-input-container>
+      <md-input-container>
+        <label>Colspan</label>
+        <input ng-model="newPost.c" type="number" min="1" max="3">
+      </md-input-container>
+      <md-input-container>
+        <md-select placeholder="choose a colour" ng-model="newPost.color" required>
+          <md-option ng-repeat="color in colors" value="{{color}}">{{color}}</md-option>
+        </md-select>
+      </md-input-container>
+    </div>
+  </md-dialog-content>
+  <div class="md-actions" layout="row">
+    <md-button ng-click="hide()" class="md-primary">
+      cancel
+    </md-button>
+    <md-button ng-click="createPost(newPost)" class="md-primary">
+      submit
+    </md-button>
+  </div>
+  </form>
+</md-dialog>
