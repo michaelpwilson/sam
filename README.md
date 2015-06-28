@@ -10,6 +10,49 @@ The demo is included in this repository showing off the [Grid List](https://mate
 
 [http://mwils.co.uk:8080](http://mwils.co.uk:8080)
 
+## Angular dependencies
+
+All dependencies can be found in the ```assets/js/dependencies``` directory. This includes of:
+
+1. angular.min.js (v1.4.1)
+2. [angular-sails.min.js](https://github.com/janpantel/angular-sails)
+3. angular-animate.min.js
+4. angular-aria.min.js
+5. angular-material.min.js
+
+Any angular modules placed inside this directory will be loaded after the above.
+
+### Grunt task
+
+Any angular modules placed inside this directory will be loaded after the above. This order of the dependencies
+is kept within the assets pipeline bundled with Sails.
+
+```javascript
+// Client-side javascript files to inject in order
+// (uses Grunt-style wildcard/glob/splat expressions)
+var jsFilesToInject = [
+
+  // Load sails.io before everything else
+  'js/dependencies/sails.io.js',
+
+  // Dependencies like jQuery, or Angular are brought in here
+  'js/dependencies/angular.min.js',
+  'js/dependencies/angular-sails.min.js',
+  'js/dependencies/angular-animate.min.js',
+  'js/dependencies/angular-aria.min.js',
+  'js/dependencies/angular-material.min.js',
+  'js/dependencies/**/*.js',
+
+  // All of the rest of your client-side js files
+  // will be injected here in no particular order.
+  'js/**/*.js'
+];
+```
+
+### app.js
+
+All of your Angular components will be in the ```app.js``` file which is in the directory just before, ```assets/js/```
+
 ## Getting started
 
 Clone this repository, make sure you install of the require dependencies and go inside the ```sails-angular-material``` directory. You can do this in one command:
