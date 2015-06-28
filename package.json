@@ -1,6 +1,6 @@
 {
   "name": "sails-angular-material",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "a Sails application using Angular Material",
   "keywords": ["mvc", "mvvm", "realtime", "sails", "angular", "material"],
   "dependencies": {

@@ -1,8 +1,14 @@
 # Sails Angular Material
 
-![Screenshot](https://raw.githubusercontent.com/mwils-bp/sails-angular-material/master/sails-angular-material.jpg)
+[![Screenshot](https://raw.githubusercontent.com/mwils-bp/sails-angular-material/master/sails-angular-material.jpg)](http://mwils.co.uk:8080)
 
-a [Sails](http://sailsjs.org) application using the latest version of Angular Material (0.10.0)
+a [Sails](http://sailsjs.org) application (v0.11.0) using the latest version of Angular Material (v0.10.0)
+
+##View the demo
+
+The demo is included in this repository showing off the [Grid List](https://material.angularjs.org/latest/#/demo/material.components.gridList) component.
+
+[http://mwils.co.uk:8080](http://mwils.co.uk:8080)
 
 ## Getting started
 
