@@ -1,12 +1,24 @@
-var app = angular.module('sam', ['ngMaterial', 'ngSails']);
+var app = angular.module('$sam', ['ngMaterial', 'ngSails']);
 
-app.controller('SamSideNavController', function($scope, $mdDialog) {
-  $scope.pages = [
-    { name: 'home' },
-    { name: 'posts' },
-    { name: 'users' },
-    { name: 'stats' }
-  ];
+app.provider('$sam', function() {
+
+   this.$get = function () {
+      return this;
+    };
+
+    this.lists = function (navLists) {
+      this.navLists = navLists;
+    };
+
+    this.outputLists = function (nav) {
+      return this.navLists;
+    };
+
+});
+
+
+app.controller('SamSideNavController', function($scope, $mdDialog, $injector) {
+
   $scope.actions = [
     { name: 'Janet Perkins', img: 'img/100-0.jpeg', newMessage: true },
     { name: 'Mary Johnson', img: 'img/100-1.jpeg', newMessage: false },
@@ -149,7 +161,7 @@ app.controller('SamMainController', ['$scope', '$sails', '$http', '$filter', '$i
         })
             .error(function (data, status, headers, jwr) {
 
-            throw new Error(data);
+            throw new Error("Couldn't find the blueprint API for /posts");
 
         });
 
