@@ -1,5 +1,7 @@
 # Sails Angular Material
 
+[![Join the chat at https://gitter.im/mwils-bp/sam](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mwils-bp/sam?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Screenshot](https://raw.githubusercontent.com/mwils-bp/sails-angular-material/master/sails-angular-material.jpg)](http://mwils.co.uk:8080)
 
 a [Sails](http://sailsjs.org) application (v0.11.0) using the latest version of Angular Material (v0.10.0). This great if you are wishing to start from scratch with a bare minimal template.
