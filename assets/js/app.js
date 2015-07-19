@@ -10,26 +10,29 @@ app.config(function($stateProvider, $urlRouterProvider, $samProvider) {
       templateUrl: "/templates/home.html"
     });
 
-  $samProvider.lists([{
-    "title": "Navigation",
-    "navigation": [{
-      "name": "Hello there",
-      "sref": ""
-    }]
-  }, {
+  $samProvider
+   .lists([{
+     "title": "Navigation",
+     "navigation": [{
+       "name": "Home"
+     }]
+   }, {
     "title": "Actions",
     "navigation": [{
-      "name": "Hello there",
-      "sref": ""
+      "name": "My account"
+    }, {
+      "name": "Settings"
+    }, {
+      "name": "Logout"
     }]
-  }]);
+   }]);
 
 });
 
 app.directive('mdSidenavLists', function () {
 
     return {
-      template: '<md-list ng-repeat="list in lists"> <md-subheader class="md-no-sticky">{{list.title}}</md-subheader><md-list-item ng-repeat="item in list.navigation">{{item.name}}</md-list-item></md-list>',
+      template: '<md-list ng-repeat="list in lists"> <md-subheader class="md-no-sticky">{{list.title}}</md-subheader><md-list-item ng-repeat="item in list.navigation" ng-click="navigate()">{{item.name}}</md-list-item></md-list>',
       controller: function ($scope, $sam) {
           $scope.lists = $sam.outputLists();
       }

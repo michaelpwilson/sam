@@ -16,7 +16,6 @@ app.provider('$sam', function() {
 
 });
 
-
 app.controller('SamSideNavController', function($scope, $mdDialog, $injector) {
 
   $scope.actions = [
@@ -56,7 +55,56 @@ app.controller('SamSideNavController', function($scope, $mdDialog, $injector) {
   };
 });
 
-app.controller('SamParentController', ['$scope', '$http', '$sails', function($scope, $http, $sails) {
+app.controller('SamParentController', ['$scope', '$http', '$sails', '$mdToast', '$animate', function($scope, $http, $sails, $mdToast, $animate) {
+
+  $scope.userStatus = "";
+  $scope.loggedIn = false;
+
+  $scope.showCustomToast = function() {
+     $mdToast.show($mdToast.simple().content($scope.userStatus));
+  };
+
+  $scope.closeToast = function() {
+    $mdToast.hide();
+  };
+
+  $scope.user = {};
+
+  $scope.login = function(user) {
+
+    $http.post('/auth/login', user)
+      .success(function(data) {
+
+        $scope.loggedIn = true;
+        $scope.userStatus = "You've logged in!";
+        $scope.showCustomToast();
+
+      })
+      .error(function(error) {
+
+        $scope.userStatus = error.error;
+        $scope.showCustomToast();
+
+      });
+
+  };
+
+  $scope.samLogout = function() {
+
+    $http.post('/auth/logout').success(function(data) {
+
+      $scope.loggedIn = false;
+      $scope.userStatus = "You've logged out!";
+      $scope.showCustomToast();
+
+    }).error(function(error) {
+
+      $scope.userStatus = error.error;
+      $scope.showCustomToast();
+
+    });
+
+  };
 
   $sails.get("/user/jwt", function (userStatus) {
 
@@ -66,8 +114,6 @@ app.controller('SamParentController', ['$scope', '$http', '$sails', function($sc
         $scope.loggedIn = false;
      }
 
-     console.log(userStatus, $scope.loggedIn);
-
   });
 
 }]);
@@ -76,21 +122,6 @@ app.controller('SamLoginController', ['$scope', '$http', '$sails', function($sco
 
   $scope.loggedIn = $scope.$parent.loggedIn;
 
-  $scope.user = {};
-
-  $scope.login = function(user) {
-
-    $http.post('/auth/login', user).success(function(data) {
-
-      $scope.$parent.loggedIn = true;
-
-    }).error(function(error) {
-
-      console.log(error);
-
-    });
-
-  };
 
 }]);
 
