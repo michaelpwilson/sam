@@ -2,7 +2,14 @@
   "name": "sails-angular-material",
   "version": "0.1.6",
   "description": "a Sails application using Angular Material",
-  "keywords": ["mvc", "mvvm", "realtime", "sails", "angular", "material"],
+  "keywords": [
+    "mvc",
+    "mvvm",
+    "realtime",
+    "sails",
+    "angular",
+    "material"
+  ],
   "dependencies": {
     "ejs": "~0.8.4",
     "grunt": "0.4.2",
@@ -18,9 +25,12 @@
     "grunt-sails-linker": "~0.9.5",
     "grunt-sync": "~0.0.4",
     "include-all": "~0.1.3",
+    "passport": "^0.2.2",
     "rc": "~0.5.0",
     "sails": "~0.11.0",
-    "sails-disk": "~0.10.0"
+    "sails-disk": "^0.10.8",
+    "waterlock": "^0.1.0",
+    "waterlock-local-auth": "0.0.6"
   },
   "scripts": {
     "debug": "node debug app.js",

@@ -1,5 +1,4 @@
-  <body ng-init="loggedIn = false" layout="column"  layout-align="center center" class="ng-cloak">
-  <div ng-controller="LoginController" ng-hide="loggedIn === true">
+  <div ng-controller="SamLoginController" ng-hide="$parent.loggedIn === true">
   <md-whiteframe class="md-whiteframe-z3 md-padding" style="width:400px" layout layout-align="center center">
    <form class="login" ng-submit="login(user)" method="post">
     <div class="photo"></div>
@@ -26,18 +25,36 @@
   </md-whiteframe>
   </div>
 
-  <div ng-controller="AppCtrl" ng-if="loggedIn === true">
+  <div ng-controller="SamMainController">
+    <div ng-if="$parent.loggedIn === true" layout="column" layout-fill class="samSideNav">
     <md-toolbar layout="row">
       <div class="md-toolbar-tools">
         <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
           <md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
         </md-button>
         <h1>SAM</h1>
+       <span flex></span>
+        <md-button class="md-raised md-primary md-hue-1" aria-label="Favorite">
+            Menu
+        </md-button>
+        <md-button class="md-raised md-primary md-hue-3" aria-label="Logout">
+            Logout
+        </md-button>
       </div>
     </md-toolbar>
     <div layout="row" flex>
-        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
-
+        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" class="samSideNav">
+<md-list ng-controller="SamSideNavController">
+  <md-subheader class="md-no-sticky">Navigation</md-subheader>
+  <md-list-item ng-repeat="page in pages">
+    {{ page.name }} 
+  </md-list-item>
+  <md-divider></md-divider>
+  <md-subheader class="md-no-sticky">Actions</md-subheader>
+  <md-list-item ng-repeat="action in actions">
+    {{ action.name }}
+  </md-list-item>
+</md-list>
         </md-sidenav>
         <div layout="column" flex id="content">
             <md-content id="appContent" layout="column" flex class="md-padding">
@@ -47,4 +64,5 @@
     </div>
 
     </div>
+ </div>
 

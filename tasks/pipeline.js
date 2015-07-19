@@ -32,6 +32,7 @@ var jsFilesToInject = [
   'js/dependencies/angular-animate.min.js',
   'js/dependencies/angular-aria.min.js',
   'js/dependencies/angular-material.min.js',
+  'js/dependencies/sam.js',
   'js/dependencies/**/*.js',
 
   // All of the rest of your client-side js files

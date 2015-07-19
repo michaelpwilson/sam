@@ -9,14 +9,7 @@ module.exports = {
 
  index: function(req, res) {
 
-   Posts.watch(req.socket);
-
-   Posts.find({}).exec(function findPosts(err, foundPosts) {
-
-     Posts.subscribe(req.socket, foundPosts);
-     res.json(foundPosts);
-
-   });
+   return res.view({});
 
  }
 	
