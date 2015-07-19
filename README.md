@@ -21,6 +21,12 @@ The demo is included in this repository showing off the [Grid List](https://mate
 
 [http://mwils.co.uk:8080](http://mwils.co.uk:8080)
 
+## Sails dependencies
+
+All dependencies can be found in the ```package.json```, but just so you are aware:
+
+1. [Waterlock](http://waterlock.ninja)
+
 ## Angular dependencies
 
 All dependencies can be found in the ```assets/js/dependencies``` directory. This includes of:
@@ -66,12 +72,12 @@ var jsFilesToInject = [
 
 ## Getting started
 
-Clone this repository and in
+Clone this repository:
 ```bash
 git clone https://github.com/mwils-bp/sam.git
 ```
 
-Clone this repository, make sure you install of the require dependencies and go inside the ```sails-angular-material``` directory.
+Make sure you install of the require dependencies and go inside the ```sails-angular-material``` directory.
 ```bash
 cd sam && npm install
 ```
@@ -120,22 +126,22 @@ app.config(function($stateProvider, $urlRouterProvider, $samProvider) {
 Configures the lists which appear in the Sidenav.
 
 ```javascript
-  $samProvider
-   .lists([{
+$samProvider
+  .lists([{
      "title": "Navigation",
      "navigation": [{
        "name": "Home"
      }]
-   }, {
-    "title": "Actions",
-    "navigation": [{
-      "name": "My account"
-    }, {
-      "name": "Settings"
-    }, {
-      "name": "Logout"
-    }]
-   }]);
+  }, {
+     "title": "Actions",
+     "navigation": [{
+       "name": "My account"
+     }, {
+       "name": "Settings"
+     }, {
+       "name": "Logout"
+     }]
+  }]);
 ```
 
 ### Sails.js
