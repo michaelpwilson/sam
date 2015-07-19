@@ -165,6 +165,8 @@ The ORM, [Waterline](https://github.com/balderdashy/waterline), has a well-defin
 - [Twitter](https://twitter.com/sailsjs)
 - [SailsCasts](http://irlnathan.github.io/sailscasts/)
 
+## Now that your ready
+
 Now generate an API for "posts" which will consist of a Model, a View and a Controller: 
 ```bash
 sails generate api posts
