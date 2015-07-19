@@ -1,6 +1,6 @@
 # SAM Stack
 
-[![Screenshot](https://raw.githubusercontent.com/mwils-bp/sails-angular-material/master/sails-angular-material.jpg)](http://mwils.co.uk:1337)
+[![Screenshot](https://raw.githubusercontent.com/mwils-bp/sam/develop/sails-angular-material.jpg)](http://mwils.co.uk:1337)
 
 A framework to get you started in minutes with [Sails.js](http://sailsjs.org) and [Angular Material](http://material.angularjs.org) to achieve full stack javascript development.
 Sails.js powers everything on the back-end, suppling a Blueprint API with realtime support via [Socket.io](). Whilst Angular Material provides a set of reusable, well-tested, and accessible UI components based on the Material Design system. 
@@ -15,7 +15,7 @@ SAM comes included with components that are commonly seen in many web applicatio
 
 ## View the demo
 
-[![Login](https://raw.githubusercontent.com/mwils-bp/sails-angular-material/master/sam-login.jpg)](http://mwils.co.uk:1337)
+[![Login](https://raw.githubusercontent.com/mwils-bp/sam/develop/sam-login.jpg)](http://mwils.co.uk:1337)
 
 The demo is included in this repository showing off the [Grid List](https://material.angularjs.org/latest/#/demo/material.components.gridList) component.
 
