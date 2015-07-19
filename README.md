@@ -2,7 +2,9 @@
 
 [![Screenshot](https://raw.githubusercontent.com/mwils-bp/sails-angular-material/master/sails-angular-material.jpg)](http://mwils.co.uk:8080)
 
-a [Sails](http://sailsjs.org) application (v0.11.0) using the latest version of Angular Material (v0.10.0)
+a [Sails](http://sailsjs.org) application (v0.11.0) using the latest version of Angular Material (v0.10.0). This great if you are wishing to start from scratch with a bare minimal template.
+
+I am currently in the process of building a fully out the box framework, which will include of common application components. Check the [Develop](https://github.com/mwils-bp/sam/tree/develop) branch.
 
 ## View the demo
 
