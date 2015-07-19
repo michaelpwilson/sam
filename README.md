@@ -1,4 +1,4 @@
-# SAM stack
+# SAM Stack
 
 [![Screenshot](https://raw.githubusercontent.com/mwils-bp/sails-angular-material/master/sails-angular-material.jpg)](http://mwils.co.uk:1337)
 
